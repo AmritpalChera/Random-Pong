@@ -6,7 +6,7 @@ Description: This file is a link between the server side and the client side and
 
 import functions from './functions.js'; //functions is a file that stores all necessary functions to get the code working
 
-let socket = io.connect("http://random-pong-random-pong.apps.us-east-2.starter.openshift-online.com/"); //connect socket to website url
+let socket = io.connect("http://random-pong-git-random-pong.apps.us-east-2.starter.openshift-online.com"); //connect socket to website url
 //let socket = io.connect('http://localhost:8080');
 
 let module = new functions(socket);
@@ -210,7 +210,7 @@ function countdownStartGame (i) {
     ctx.fillText(time, 490, 490);        
     setTimeout(function () {
         time--;  
-        console.log(time);
+        //console.log(time);
         if (time < 1){
             ctx.font = "30px Arial";
             requestAnimationFrame(game);
