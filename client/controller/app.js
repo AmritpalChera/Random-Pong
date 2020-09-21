@@ -6,8 +6,8 @@ Description: This file is a link between the server side and the client side and
 
 import functions from './functions.js'; //functions is a file that stores all necessary functions to get the code working
 
-let socket = io.connect("http://random-pong-git-random-pong.apps.us-east-2.starter.openshift-online.com"); //connect socket to website url
-//let socket = io.connect('http://localhost:8080');
+//let socket = io.connect("http://random-pong-git-random-pong.apps.us-east-2.starter.openshift-online.com"); //connect socket to website url
+let socket = io.connect('http://localhost:8080');
 
 let module = new functions(socket);
 
