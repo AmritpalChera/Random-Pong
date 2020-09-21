@@ -8,7 +8,7 @@ Description: This is the server side that deals with all incoming data and distr
 let express= require('express')
 let app = express();
 let server  = require('http').Server(app);
-//let compression = require('compression');
+let compression = require('compression');
 //let helmet = require('helmet');
 let cors = require('cors');
 server.listen(8080);
@@ -16,7 +16,7 @@ const io = require('socket.io').listen(server);
 const clientPath = "./client/"; //client path where the client files are stored
 app.use(cors());
 //app.use(helmet());
-//app.use(compression()); //compress all routes
+app.use(compression()); //compress all routes
 app.use(express.static(clientPath)); 
 
 const main  = require('./mainGame/local1.js'); //local main
