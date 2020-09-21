@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>"Random Pong"</title>
+        <meta charset="utf-8"/>
+        <link rel = "stylesheet" type="text/css" href = "./styles1.css">
+        <link rel="shortcut icon" href="./favicon.ico"/>
+        <link rel="shortcut icon" href="./favicon_16.ico"/>
+        <link rel="shortcut icon" href="./favicon_24.ico"/>
+        <link rel="shortcut icon" href="./favicon_32.ico"/>
+        <link rel="shortcut icon" href="./favicon_64.ico"/>
+        <script src = "/socket.io/socket.io.js"></script>
+        <script type = "module" src = "./controller/app.js"></script>  
+    </head>
+
+    <body>
+        <div class="grid">
+            <header >
+                <div class="title textLeft bold" >
+                    <a id = "title" href="/">RANDOM PONG</a>
+                </div>
+
+                <div class = "nav textRight">
+                    <li>Contact</li>
+                    <li class = "lastElement">Contact</li>
+                </div>
+            </header>
+
+        <canvas width = 1000 height = 500 id = "myCanvas" ></canvas>
+       
+
+        <div id="introPage"></div>
+        <div id = "instructions"></div>
+        <div id = "instructionsMulti"></div>
+        <div id="introImg"></div>
+        <button id="continue">Continue</button>
+        
+        
+        <div class = "btns">
+            <button id ="singleBtn">Online</button>
+            <button id ="doubleBtn">Local</button>
+        </div>
+
+        <div class = "onlineChoice">
+            <button id="randomBtn">Random</button>
+            <button id='friendBtn'>Play a Friend</button>
+        </div>
+        
+        <div class =  "input">
+            <h2 id="settingsTitle">Settings</h2>
+            <div id = "choosingPoints">
+                
+                <p class = "bold" id = "label1"> Points:</p>
+                <input type="range" id="points" min="1" max="20" value = "5">
+        
+            </div>
+                
+            <div id = "choosingRandomness">
+                <p class = "bold" id = "label2">Randomness: </p>
+                <input type="range" id='randomnessLevel' min="0" max="2" value = "2">
+            </div>
+    
+        </div>
+
+        <button id = "submitPoints" class = "bold">PLAY!</button>
+        <button id = "replayBtn" class = "bold">REPLAY!</button>
+        
+        <div id = "joinPage">
+            <input type =text placeholder="Server Name (No Space!)" id = "joinNamespace"/>
+            <input type="submit" value = "Join Game" disabled id = "joinGameBtn">
+        </div>
+
+        <div id = "createPage">
+            <input type =text placeholder="Server Name (No Space!)" id = "createNamespace"/>
+            <input type ="submit" value = "Create Game" id = "createGameBtn">
+        </div>
+        
+    
+        <img src = "./visuals/ballColors.jpg" id = "ball"/>
+
+        <footer>
+            <div class = "copyright textLeft bold">
+                    &copy Chera
+            </div>
+            <div class = "links textRight">
+
+                    <li>
+                        <img src="./visuals/github.svg"/>
+                      </li>
+                      <li>
+                        <img src="./visuals/website.png">
+                      </li>
+                      
+                      <li>
+                        <a href="https://gaana.com/"><img src="./visuals/linkedin.svg" class = "lastElement"></a>
+                      </li>
+
+            </div>
+        </footer>
+
+        </div>
+
+    </body>
+
+
+
+        
