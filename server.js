@@ -11,7 +11,8 @@ let server  = require('http').Server(app);
 let compression = require('compression');
 //let helmet = require('helmet');
 let cors = require('cors');
-server.listen(8080);
+const port = process.env.PORT || 8080;
+server.listen(port);
 const io = require('socket.io').listen(server);
 const clientPath = "./client/"; //client path where the client files are stored
 app.use(cors());
