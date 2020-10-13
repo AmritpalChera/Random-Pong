@@ -6,8 +6,8 @@ Description: This file is a link between the server side and the client side and
 
 import functions from './functions.js'; //functions is a file that stores all necessary functions to get the code working
 
-let socket = io("https://random-pong.herokuapp.com/", {transports: ["websocket"]}); //connect socket to website url
-//let socket = io('http://localhost:8080');
+//let socket = io("https://random-pong.herokuapp.com/", {transports: ["websocket"]}); //connect socket to website url
+let socket = io('http://localhost:8080');
 
 let module = new functions(socket);
 
@@ -288,14 +288,50 @@ replayBtn.onclick = ()=>{
     location.href = "/";
 }
 
+var stop = false;
+var frameCount = 0;
+let fps = 30;
+let fpsInterval, startTime, now, then, elapsed;
 
-function game(){
+function startAnimating(fps) {
+    fpsInterval = 1000 / fps;
+    then = Date.now();
+    startTime = then;
+}
+startAnimating(fps);
+
+function game() {
+    
     //this data will be sent when the browser is ready to render once again regardless if the user moves or not
     //on server side, call the function game only once on the multi1.js side
-    module.sendData('calculateLocal', map);
-    if (!gameDone && !pause){
+    
+   
+    now = Date.now();
+    elapsed = now - then;
+    console.log("elapsed", elapsed);
+    console.log("fpsInterval", fpsInterval);
+
+
+    // if enough time has elapsed, draw the next frame
+
+    if (elapsed > fpsInterval) {
+
+        // Get ready for next frame by setting then=now, but also adjust for your
+        // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
+        then = now - (elapsed % fpsInterval);
+
+        // Put your drawing code here
+        module.sendData('calculateLocal', map);
+    }
+
+    if (!gameDone && !pause) {
+        console.log('hello')
         requestAnimationFrame(game); 
     }
+    
+
+    
+    
         
 }
 
