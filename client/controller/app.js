@@ -6,8 +6,8 @@ Description: This file is a link between the server side and the client side and
 
 import functions from './functions.js'; //functions is a file that stores all necessary functions to get the code working
 
-//let socket = io("https://random-pong.herokuapp.com/", {transports: ["websocket"]}); //connect socket to website url
-let socket = io('http://localhost:8080');
+let socket = io("https://random-pong.herokuapp.com/", {transports: ["websocket"]}); //connect socket to website url
+//let socket = io('http://localhost:8080');
 
 let module = new functions(socket);
 
@@ -308,8 +308,8 @@ function game() {
    
     now = Date.now();
     elapsed = now - then;
-    console.log("elapsed", elapsed);
-    console.log("fpsInterval", fpsInterval);
+    // console.log("elapsed", elapsed);
+    // console.log("fpsInterval", fpsInterval);
 
 
     // if enough time has elapsed, draw the next frame
@@ -325,7 +325,7 @@ function game() {
     }
 
     if (!gameDone && !pause) {
-        console.log('hello')
+        //console.log('hello')
         requestAnimationFrame(game); 
     }
     
