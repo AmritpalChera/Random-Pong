@@ -290,7 +290,7 @@ replayBtn.onclick = ()=>{
 
 var stop = false;
 var frameCount = 0;
-let fps = 50;
+let fps = 40;
 let fpsInterval, startTime, now, then, elapsed;
 
 function startAnimating(fps) {

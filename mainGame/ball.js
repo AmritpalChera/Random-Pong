@@ -15,7 +15,7 @@ module.exports =  class ball {
         };
 
         this._ball_limits = { //consider calculations in Quadrant 1 of the cartesian plain
-            speed_max: 17,
+            speed_max: 13,
             speed_min: 3,
             angle_max: Math.PI*7/18, //70 degrees
             angle_min: Math.PI/6, //30 degrees 
